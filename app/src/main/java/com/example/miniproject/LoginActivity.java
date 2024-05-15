@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 
 import java.util.Objects;
 
@@ -69,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
 //                    if(firebaseAuth.getCurrentUser().isEmailVerified()){
                         //go to mainactivity
                     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
                     if (Objects.equals(currentUser.getEmail(), "doctor@gmail.com"))
                         startActivity(new Intent(LoginActivity.this,MainActivityDoctor.class));
                     else
@@ -109,5 +112,6 @@ public class LoginActivity extends AppCompatActivity {
         }
         return true;
     }
+
 
 }

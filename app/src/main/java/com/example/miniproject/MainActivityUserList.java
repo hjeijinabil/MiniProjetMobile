@@ -22,33 +22,29 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class MainActivityDoctor extends AppCompatActivity {
-    private static final String TAG = "MainActivityDoctor";
+public class MainActivityUserList extends AppCompatActivity {
+    private static final String TAG = "MainActivityUserList";
 //    FloatingActionButton addAppoitementBtn;
     RecyclerView recyclerView;
     ImageButton menuBtn;
-    DoctorAppointementAdaper doctorAppointementAdaper;
-
-    String uuid;
+    UserAdapter userAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_doctor);
+        setContentView(R.layout.activity_main_user_list);
 
 //        addAppoitementBtn = findViewById(R.id.add_note_btn);
         recyclerView = findViewById(R.id.recyler_view);
         menuBtn = findViewById(R.id.menu_btn);
 
-
-
-//        addAppoitementBtn.setOnClickListener((v)-> startActivity(new Intent(MainActivityDoctor.this, AppointementDetailsActivity.class)) );
+//        addAppoitementBtn.setOnClickListener((v)-> startActivity(new Intent(MainActivityUserList.this, AppointementDetailsActivity.class)) );
         menuBtn.setOnClickListener((v)->showMenu() );
         setupRecyclerView();
     }
 
     void showMenu(){
-        PopupMenu popupMenu  = new PopupMenu(MainActivityDoctor.this,menuBtn);
+        PopupMenu popupMenu  = new PopupMenu(MainActivityUserList.this,menuBtn);
         popupMenu.getMenu().add("Logout");
         popupMenu.show();
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -56,7 +52,7 @@ public class MainActivityDoctor extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem menuItem) {
                 if(menuItem.getTitle()=="Logout"){
                     FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(MainActivityDoctor.this,LoginActivity.class));
+                    startActivity(new Intent(MainActivityUserList.this,LoginActivity.class));
                     finish();
                     return true;
                 }
@@ -68,32 +64,32 @@ public class MainActivityDoctor extends AppCompatActivity {
 
     void setupRecyclerView(){
 
-        uuid = getIntent().getStringExtra("uuid");
-        Query query = Utility.getAllCollectionReferenceForAppointement(uuid).orderBy("timestamp", Query.Direction.DESCENDING);
-        FirestoreRecyclerOptions<Appointement> options = new FirestoreRecyclerOptions.Builder<Appointement>()
-                .setQuery(query, Appointement.class)
+
+        Query query = Utility.getCollectionReferenceForUser().orderBy("email", Query.Direction.DESCENDING);
+        FirestoreRecyclerOptions<UserDto> options = new FirestoreRecyclerOptions.Builder<UserDto>()
+                .setQuery(query, UserDto.class)
                 .build();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        doctorAppointementAdaper = new DoctorAppointementAdaper(options,this);
-        recyclerView.setAdapter(doctorAppointementAdaper);
+        userAdapter = new UserAdapter(options,this);
+        recyclerView.setAdapter(userAdapter);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        doctorAppointementAdaper.startListening();
+        userAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        doctorAppointementAdaper.stopListening();
+        userAdapter.stopListening();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        doctorAppointementAdaper.notifyDataSetChanged();
+        userAdapter.notifyDataSetChanged();
     }
 }

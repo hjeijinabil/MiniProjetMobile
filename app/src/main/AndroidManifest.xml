@@ -12,10 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniProject"
         tools:targetApi="31" >
+        <activity
 
+            android:name=".MainActivityUserList"
+
+            android:exported="false" />
         <activity
             android:name=".MainActivityDoctor"
             android:exported="false" />
+
+
         <activity
             android:name=".AppointementDetailsActivity"
             android:exported="false" />

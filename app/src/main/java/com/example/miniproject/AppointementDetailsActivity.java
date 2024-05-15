@@ -14,6 +14,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class AppointementDetailsActivity extends AppCompatActivity {
 
     EditText nameEditText,dateEditText;
@@ -65,6 +69,10 @@ public class AppointementDetailsActivity extends AppCompatActivity {
         }
         Appointement appointement = new Appointement();
         appointement.setName(appname);
+
+
+
+
         appointement.setScheduledDate(Timestamp.now()); // to be changed
         appointement.setTimestamp(Timestamp.now());
 
@@ -101,16 +109,16 @@ public class AppointementDetailsActivity extends AppCompatActivity {
 
     void deleteAppointementFromFirebase(){
         DocumentReference documentReference;
-            documentReference = Utility.getCollectionReferenceForNotes().document(docId);
+            documentReference = Utility.getCollectionReferenceForAppointement().document(docId);
         documentReference.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     //note is deleted
-                    Utility.showToast(AppointementDetailsActivity.this,"Note deleted successfully");
+                    Utility.showToast(AppointementDetailsActivity.this,"Appointement deleted successfully");
                     finish();
                 }else{
-                    Utility.showToast(AppointementDetailsActivity.this,"Failed while deleting note");
+                    Utility.showToast(AppointementDetailsActivity.this,"Failed while deleting Appointement");
                 }
             }
         });

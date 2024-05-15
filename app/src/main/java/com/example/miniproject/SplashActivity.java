@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(new Intent(SplashActivity.this,LoginActivity.class));
                 }else{
                     if (currentUser.getEmail().equals("doctor@gmail.com"))
-                    startActivity(new Intent(SplashActivity.this,MainActivityDoctor.class));
+                    startActivity(new Intent(SplashActivity.this,MainActivityUserList.class));
                     else
                         startActivity(new Intent(SplashActivity.this,MainActivity.class));
                 }

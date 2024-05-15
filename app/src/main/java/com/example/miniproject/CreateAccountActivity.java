@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
@@ -69,6 +70,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                             //creating acc is done
                             Utility.showToast(CreateAccountActivity.this,"Successfully create account,Check email to verify");
                             firebaseAuth.getCurrentUser().sendEmailVerification();
+                            addUserCollection(new UserDto(firebaseAuth.getCurrentUser().getUid(),firebaseAuth.getCurrentUser().getEmail()));
                             firebaseAuth.signOut();
                             finish();
                         }else{
@@ -109,6 +111,24 @@ public class CreateAccountActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    void addUserCollection(UserDto user) {
+        System.out.println(user.getEmail());
+        DocumentReference documentReference;
+        documentReference = Utility.getCollectionReferenceForUser().document();
+        documentReference.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    //user is added
+                    Utility.showToast(CreateAccountActivity.this,"user added successfully");
+                    finish();
+                }else{
+                    Utility.showToast(CreateAccountActivity.this,"Failed while adding user");
+                }
+            }
+        });
     }
 
 }

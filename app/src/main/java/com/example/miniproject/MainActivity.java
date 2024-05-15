@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void setupRecyclerView(){
-        Query query  = Utility.getCollectionReferenceForAllAppointement().orderBy("timestamp",Query.Direction.DESCENDING);
+        Query query  = Utility.getCollectionReferenceForAppointement().orderBy("timestamp",Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Appointement> options = new FirestoreRecyclerOptions.Builder<Appointement>()
                 .setQuery(query,Appointement.class).build();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

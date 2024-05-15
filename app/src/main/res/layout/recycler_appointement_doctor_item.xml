@@ -43,23 +43,23 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:id="@+id/ok_btn"
-        android:layout_height="50dp"
-        android:text="Ok"
-        android:layout_marginTop="12dp"
-        android:textSize="16sp"
-        />
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:id="@+id/ok_btn"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:text="Ok"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:textSize="16sp"-->
+<!--        />-->
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:id="@+id/refuse_btn"
-        android:layout_height="50dp"
-        android:text="Refuse"
-        android:layout_marginTop="12dp"
-        android:textSize="16sp"
-        />
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:id="@+id/refuse_btn"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:text="Refuse"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:textSize="16sp"-->
+<!--        />-->
         </LinearLayout>
 
 </LinearLayout>
