@@ -2,25 +2,20 @@ package com.example.miniproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.miniproject.adapter.UserAdapter;
+import com.example.miniproject.auth.LoginActivity;
+import com.example.miniproject.model.UserDto;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivityUserList extends AppCompatActivity {
     private static final String TAG = "MainActivityUserList";
@@ -52,7 +47,7 @@ public class MainActivityUserList extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem menuItem) {
                 if(menuItem.getTitle()=="Logout"){
                     FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(MainActivityUserList.this,LoginActivity.class));
+                    startActivity(new Intent(MainActivityUserList.this, LoginActivity.class));
                     finish();
                     return true;
                 }

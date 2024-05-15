@@ -1,4 +1,4 @@
-package com.example.miniproject;
+package com.example.miniproject.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.miniproject.model.Appointement;
+import com.example.miniproject.AppointementDetailsActivity;
+import com.example.miniproject.R;
+import com.example.miniproject.Utility;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
@@ -28,7 +32,7 @@ public class AppointementAdapter extends FirestoreRecyclerAdapter<Appointement, 
         holder.timestampTextView.setText(Utility.timestampToString(appointement.timestamp));
 
         holder.itemView.setOnClickListener((v)->{
-            Intent intent = new Intent(context,AppointementDetailsActivity.class);
+            Intent intent = new Intent(context, AppointementDetailsActivity.class);
             intent.putExtra("name",appointement.name);
             intent.putExtra("date",appointement.scheduledDate);
             String docId = this.getSnapshots().getSnapshot(position).getId();

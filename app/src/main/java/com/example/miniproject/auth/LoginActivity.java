@@ -1,4 +1,4 @@
-package com.example.miniproject;
+package com.example.miniproject.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +12,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.miniproject.MainActivity;
+import com.example.miniproject.MainActivityUserList;
+import com.example.miniproject.R;
+import com.example.miniproject.Utility;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 
 import java.util.Objects;
 
@@ -40,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         createAccountBtnTextView = findViewById(R.id.create_account_text_view_btn);
 
         loginBtn.setOnClickListener((v)-> loginUser() );
-        createAccountBtnTextView.setOnClickListener((v)->startActivity(new Intent(LoginActivity.this,CreateAccountActivity.class)) );
+        createAccountBtnTextView.setOnClickListener((v)->startActivity(new Intent(LoginActivity.this, CreateAccountActivity.class)) );
 
     }
 
@@ -73,9 +76,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
                     if (Objects.equals(currentUser.getEmail(), "doctor@gmail.com"))
-                        startActivity(new Intent(LoginActivity.this,MainActivityUserList.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivityUserList.class));
                     else
-                        startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
 //                    }else{
 //                        Utility.showToast(LoginActivity.this,"Email not verified, Please verify your email.");

@@ -1,4 +1,4 @@
-package com.example.miniproject;
+package com.example.miniproject.model;
 
 import com.google.firebase.Timestamp;
 
@@ -6,8 +6,8 @@ import java.util.UUID;
 
 public class UserDto {
 
-    String uuid;
-    String email;
+    public String uuid;
+    public String email;
 
     public UserDto(String uuid, String email) {
         this.uuid = uuid;

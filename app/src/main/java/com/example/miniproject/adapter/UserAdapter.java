@@ -1,4 +1,4 @@
-package com.example.miniproject;
+package com.example.miniproject.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.miniproject.MainActivityDoctor;
+import com.example.miniproject.R;
+import com.example.miniproject.model.UserDto;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.firestore.auth.User;
 
 public class UserAdapter extends FirestoreRecyclerAdapter<UserDto, UserAdapter.UserViewHolder> {
     Context context;
@@ -28,7 +30,7 @@ public class UserAdapter extends FirestoreRecyclerAdapter<UserDto, UserAdapter.U
 
 
         holder.itemView.setOnClickListener((v)->{
-            Intent intent = new Intent(context,MainActivityDoctor.class);
+            Intent intent = new Intent(context, MainActivityDoctor.class);
             intent.putExtra("uuid",user.uuid);
 //            String docId = this.getSnapshots().getSnapshot(position).getId();
 //            intent.putExtra("docId",docId);

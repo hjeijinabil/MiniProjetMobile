@@ -1,12 +1,12 @@
-package com.example.miniproject;
+package com.example.miniproject.model;
 
 import com.google.firebase.Timestamp;
 
 public class Appointement {
 
-    String name;
-    Timestamp scheduledDate;
-    Timestamp timestamp;
+    public String name;
+    public Timestamp scheduledDate;
+    public Timestamp timestamp;
 
     public String getName() {
         return name;

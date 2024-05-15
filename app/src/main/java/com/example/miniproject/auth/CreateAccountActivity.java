@@ -1,4 +1,4 @@
-package com.example.miniproject;
+package com.example.miniproject.auth;
 
 import android.os.Bundle;
 import android.util.Patterns;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.miniproject.R;
+import com.example.miniproject.model.UserDto;
+import com.example.miniproject.Utility;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

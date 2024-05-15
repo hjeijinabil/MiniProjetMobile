@@ -26,10 +26,10 @@
             android:name=".AppointementDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateAccountActivity"
+            android:name=".auth.CreateAccountActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

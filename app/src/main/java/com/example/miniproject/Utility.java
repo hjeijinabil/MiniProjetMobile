@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class Utility {
 
-    static void showToast(Context context,String message){
+    public static void showToast(Context context, String message){
         Toast.makeText(context,message,Toast.LENGTH_SHORT).show();
     }
     private static final String TAG = "FirestoreData";
@@ -45,7 +45,7 @@ public class Utility {
     }
 
 
-    static String timestampToString(Timestamp timestamp){
+    public static String timestampToString(Timestamp timestamp){
         return new SimpleDateFormat("MM/dd/yyyy").format(timestamp.toDate());
     }
 
