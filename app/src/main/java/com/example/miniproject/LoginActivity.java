@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                     if (Objects.equals(currentUser.getEmail(), "doctor@gmail.com"))
-                        startActivity(new Intent(LoginActivity.this,MainActivityDoctor.class));
+                        startActivity(new Intent(LoginActivity.this,MainActivityUserList.class));
                     else
                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
                         finish();

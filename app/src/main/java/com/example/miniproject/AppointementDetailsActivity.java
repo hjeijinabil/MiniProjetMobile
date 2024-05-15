@@ -39,8 +39,8 @@ public class AppointementDetailsActivity extends AppCompatActivity {
         deleteAppointementTextViewBtn  = findViewById(R.id.delete_note_text_view_btn);
 
         //receive data
-        name = getIntent().getStringExtra("title");
-        date= getIntent().getStringExtra("content");
+        name = getIntent().getStringExtra("name");
+        date= getIntent().getStringExtra("date");
         docId = getIntent().getStringExtra("docId");
 
         if(docId!=null && !docId.isEmpty()){

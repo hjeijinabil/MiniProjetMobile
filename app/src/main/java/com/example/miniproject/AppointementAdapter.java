@@ -27,14 +27,14 @@ public class AppointementAdapter extends FirestoreRecyclerAdapter<Appointement, 
         holder.dateTextView.setText(Utility.timestampToString(appointement.scheduledDate));
         holder.timestampTextView.setText(Utility.timestampToString(appointement.timestamp));
 
-//        holder.itemView.setOnClickListener((v)->{
-//            Intent intent = new Intent(context,NoteDetailsActivity.class);
-//            intent.putExtra("title",note.title);
-//            intent.putExtra("content",note.content);
-//            String docId = this.getSnapshots().getSnapshot(position).getId();
-//            intent.putExtra("docId",docId);
-//            context.startActivity(intent);
-//        });
+        holder.itemView.setOnClickListener((v)->{
+            Intent intent = new Intent(context,AppointementDetailsActivity.class);
+            intent.putExtra("name",appointement.name);
+            intent.putExtra("date",appointement.scheduledDate);
+            String docId = this.getSnapshots().getSnapshot(position).getId();
+            intent.putExtra("docId",docId);
+            context.startActivity(intent);
+        });
 
     }
 
