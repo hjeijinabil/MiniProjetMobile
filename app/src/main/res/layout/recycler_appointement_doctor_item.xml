@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:padding="12dp"
+    android:layout_marginVertical="8dp"
+    android:backgroundTint="@color/white"
+    android:background="@drawable/rounded_corner"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_name_text_view"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginVertical="4dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_date_text_view"
+        android:text="scheduled date"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="17sp"
+        android:layout_marginVertical="4dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_timestamp_text_view"
+        android:text="timestamp"
+        android:textSize="12sp"
+        android:gravity="right"
+        android:layout_marginVertical="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/form_layout"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:id="@+id/ok_btn"
+        android:layout_height="50dp"
+        android:text="Ok"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:id="@+id/refuse_btn"
+        android:layout_height="50dp"
+        android:text="Refuse"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        />
+        </LinearLayout>
+
+</LinearLayout>

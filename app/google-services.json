@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1095301868557",
+    "project_id": "miniprojectandroid-18863",
+    "storage_bucket": "miniprojectandroid-18863.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095301868557:android:6c4e945a708cd6a32c7944",
+        "android_client_info": {
+          "package_name": "com.example.miniproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuJZHEoNj5iOknhDpX0grHgZ1MDPDuSoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095301868557:android:7e8646972f21c2112c7944",
+        "android_client_info": {
+          "package_name": "easy.tuto.notespro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuJZHEoNj5iOknhDpX0grHgZ1MDPDuSoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
